@@ -17,9 +17,6 @@ public abstract class Ennamy :Character
         
         }
            
-    
-    
-    
     }
 
     private void Start()
