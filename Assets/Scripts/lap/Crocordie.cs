@@ -2,21 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crocordie : Ennamy
+public class Crocordie : Ennamy, Ishootable
 {
     [SerializeField]private float attackRange;
     public Player player;
 
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform bulletSpawnPoint;
+
+    [SerializeField] private GameObject bullet; 
+    public GameObject Bullet { get { return bullet; } set { bullet = value; } }
+
+    [SerializeField] private Transform spawnPoint;
+    public Transform SpawnPoint { get { return spawnPoint; } set { spawnPoint = value; } }
+
+
 
     //colldown bullet
     [SerializeField] private float bulletSpawnTime;
+    public float BulletSpawnTime { get { return bulletSpawnTime; } set { bulletSpawnTime = value; } }
+
     [SerializeField] private float bulletTime;
+    public float BulletTime { get { return bulletTime; } set { bulletTime = value; } }
+
 
     private void Update()
     {
-        bulletTime -= Time.deltaTime;
+        BulletTime -= Time.deltaTime;
         Behaviour();
     }
 
@@ -32,13 +42,13 @@ public class Crocordie : Ennamy
         }
 
     }
-    private void Shoot()
+    public void Shoot()
     {
-        if (bulletTime <= 0)
+        if (BulletTime <= 0)
         {
-            Instantiate(bullet, bulletSpawnPoint.position, Quaternion.identity);
+            Instantiate(Bullet, SpawnPoint.position, Quaternion.identity);
 
-            bulletTime = bulletSpawnTime;
+            BulletTime = BulletSpawnTime;
         }
     
     }

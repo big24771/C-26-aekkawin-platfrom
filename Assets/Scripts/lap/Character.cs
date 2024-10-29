@@ -30,5 +30,10 @@ public abstract class Character : MonoBehaviour
     {
         health -= damage;
     }
+    public void InIt(int newHealth)
+    { 
+        Health = newHealth;
+    
+    }
 
 }
