@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player : Character, Ishootable
 {
     [field: SerializeField] public GameObject Bullet { get; set; }
+    
+    
+    
     [SerializeField] private Transform spawnPoint;
     public Transform SpawnPoint { get { return spawnPoint; } set { spawnPoint = value; } }
 
