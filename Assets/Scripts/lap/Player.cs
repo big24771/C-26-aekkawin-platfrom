@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Character, Ishootable
+public class Player : Character, Ishootable //ตรงนี้เพิ่ม isshootable
 {
+    //เพิ่มมา
     [field: SerializeField] public GameObject Bullet { get; set; }
     
     
@@ -30,6 +31,7 @@ public class Player : Character, Ishootable
         }
 
     }
+    //
     public void Start()
     {
         InIt(100);
