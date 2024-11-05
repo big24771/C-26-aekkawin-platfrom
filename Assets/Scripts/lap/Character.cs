@@ -29,6 +29,7 @@ public abstract class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Debug.Log($"{health}");
     }
     public void InIt(int newHealth)
     { 

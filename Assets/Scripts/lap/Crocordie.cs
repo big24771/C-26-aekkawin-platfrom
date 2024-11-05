@@ -23,6 +23,11 @@ public class Crocordie : Ennamy, Ishootable
     [SerializeField] private float bulletTime;
     public float BulletTime { get { return bulletTime; } set { bulletTime = value; } }
 
+    private void Start()
+    {
+        InIt(100);
+    }
+
 
     private void Update()
     {
@@ -46,10 +51,14 @@ public class Crocordie : Ennamy, Ishootable
     {
         if (BulletTime <= 0)
         {
-            Instantiate(Bullet, SpawnPoint.position, Quaternion.identity);
+            anim.SetTrigger("Shoot");
+            GameObject obj = Instantiate(Bullet, SpawnPoint.position, Quaternion.identity);
+            Rock rock = obj.GetComponent<Rock>();//เอากระสุนมาติ๊
+            rock.Init(20, this);
 
             BulletTime = BulletSpawnTime;
         }
-    
+       
+
     }
 }
