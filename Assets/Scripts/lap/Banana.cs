@@ -1,31 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
-public class Bnana : Weapon
+public class Banana : Weapon
 {
 
-    //private float speed = 4f;
+    private float speed;
     //public Vector2 MoveDirection = Vector2.right;
    
     public  override void Move()
     {
-        //transform.transform.position = MoveDirection;
-        Debug.Log("Banana moves with constant speed using Tranfrom");
-       
+        float newX = transform.position.x + speed * Time.fixedDeltaTime;
+        float newY = transform.position.y;
+        Vector2 newPosition = new Vector2(newX, newY);
+        transform.position = newPosition;
+
     }
     public override void OnHitWith(Character _character)
     {
-        
+        if (_character is Ennamy)
+            _character.TakeDamage(this.Damage);
     }
-
-    private void Start() 
+    //update move เวลายิง
+    private void FixedUpdate()
     {
-        Damage = 30;
         Move();
-
-    
-    
-    
     }
+    public void Start()
+    {
+        Damage = 20;
+        speed = 4f * GetShootDiraction();
+    }
+
+
+
 }

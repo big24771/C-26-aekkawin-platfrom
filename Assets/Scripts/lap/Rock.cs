@@ -30,9 +30,8 @@ public class Rock : Weapon
     void Update() 
     {
         
-    
-    
-    
+
+
     }
 
 

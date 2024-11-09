@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] public string  Ishootable;
     
-    [SerializeField]private int damage;
+    
+    private int damage;
     public Ishootable shooter;
 
     public int Damage
@@ -44,7 +44,7 @@ public abstract class Weapon : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.GetComponent<Character>();//àªç¤ª¹
-        //Destroy(this.gameObject, 6f); 
+        Destroy(this.gameObject, 6f); 
     }
 
 

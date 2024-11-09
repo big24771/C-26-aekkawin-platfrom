@@ -25,7 +25,9 @@ public class Player : Character, Ishootable //ตรงนี้เพิ่ม isshootable
         
         if (Input.GetButtonDown( "Fire1") && BulletTime >=  bulletSpawnTime)
         {
-            Instantiate(Bullet, SpawnPoint.position, Quaternion.identity);
+            GameObject obj  =  Instantiate(Bullet, SpawnPoint.position, Quaternion.identity);
+             Banana banana = obj.GetComponent<Banana>();
+            banana.Init(10, this);
             BulletTime = 0;
             Debug.Log("555555555555");
         }

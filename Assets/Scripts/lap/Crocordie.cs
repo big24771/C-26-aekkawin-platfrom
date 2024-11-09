@@ -33,6 +33,11 @@ public class Crocordie : Ennamy, Ishootable
     {
         BulletTime -= Time.deltaTime;
         Behaviour();
+        if (bulletTime <= 0)
+        {
+            bulletTime = bulletSpawnTime;
+        
+        }
     }
 
     public override void Behaviour()
