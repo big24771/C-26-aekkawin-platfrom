@@ -17,6 +17,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    [SerializeField] hpdown hpdown; 
     public Animator anim;
     public Rigidbody2D rb;
 
@@ -24,16 +25,19 @@ public abstract class Character : MonoBehaviour
 
     public bool IsDead()
     {
-        return health <= 0;
+        return Health <= 0;
     }
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        Health -= damage;
+        hpdown.UpdateHealthBar(Health);
         Debug.Log($"{health}");
     }
     public void InIt(int newHealth)
     { 
         Health = newHealth;
+        hpdown.SetMaxHP(Health);
+        hpdown.UpdateHealthBar(Health);
     
     }
 

@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  hpdown: {fileID: 0}
   anim: {fileID: 420720295}
   rb: {fileID: 420720296}
   velocity: {x: -1, y: 0}
@@ -970,6 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  hpdown: {fileID: 0}
   anim: {fileID: 502262520}
   rb: {fileID: 502262522}
   attackRange: 6
@@ -1256,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  hpdown: {fileID: 1615190046}
   anim: {fileID: 657492010}
   rb: {fileID: 657492011}
   <Bullet>k__BackingField: {fileID: 182108, guid: a5638a192258f4059b0e074542d33fbc, type: 3}
@@ -3172,6 +3175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615190044}
   - component: {fileID: 1615190045}
+  - component: {fileID: 1615190046}
   m_Layer: 5
   m_Name: hp bar
   m_TagString: Untagged
@@ -3250,6 +3254,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1615190046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615190043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e69cbe6b2d8b143938e3592101c6e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1615190045}
 --- !u!4 &1618103216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473078, guid: 988fc297a71d24254ba0a364fda65476, type: 3}
