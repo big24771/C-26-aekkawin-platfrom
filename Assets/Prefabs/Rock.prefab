@@ -171,5 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7461febcc1a17004a9bd8803012533b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ishootable: 
-  damage: 0
+  damage: 20

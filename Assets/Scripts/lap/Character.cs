@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]private int health;
+    
     public int Health
     {
         get
@@ -32,11 +33,12 @@ public abstract class Character : MonoBehaviour
         Health -= damage;
         hpdown.UpdateHealthBar(Health);
         Debug.Log($"{health}");
+        IsDead();
     }
     public void InIt(int newHealth)
     { 
         Health = newHealth;
-        hpdown.SetMaxHP(Health);
+        hpdown.SetMaxHP(newHealth);
         hpdown.UpdateHealthBar(Health);
     
     }

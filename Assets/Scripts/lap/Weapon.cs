@@ -6,7 +6,7 @@ public abstract class Weapon : MonoBehaviour
 {
     
     
-    private int damage;
+    [SerializeField]private int damage;
     public Ishootable shooter;
 
     public int Damage

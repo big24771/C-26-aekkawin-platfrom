@@ -12,10 +12,10 @@ public class Rock : Weapon
         rb.AddForce(force, ForceMode2D.Impulse);
     
     }
-    public override void OnHitWith(Character character)
+    public override void OnHitWith(Character _character)
     {
-        if (character is Player)
-            character.TakeDamage(this.Damage);
+        if (_character is Player)
+            _character.TakeDamage(this.Damage);
     }
 
     public void Start() 
@@ -27,12 +27,6 @@ public class Rock : Weapon
     
     
     }
-    void Update() 
-    {
-        
-
-
-    }
-
+    
 
 }

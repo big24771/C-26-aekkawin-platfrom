@@ -29,7 +29,7 @@ public class Player : Character, Ishootable //ตรงนี้เพิ่ม isshootable
              Banana banana = obj.GetComponent<Banana>();
             banana.Init(10, this);
             BulletTime = 0;
-            Debug.Log("555555555555");
+            
         }
 
     }
